@@ -1,0 +1,40 @@
+.discography {
+    width: 44%;
+
+    &__img img {
+        width: 940px;
+        height: 410px;
+        margin-left: -205px;
+        margin-bottom: 70px;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+        display: flex;
+    }
+
+    .sub-title:last-of-type {
+        margin-left: auto;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -60px;
+            transform: translate(0, -50%);
+            width: 15px;
+            height: 15px;
+            background: $lightbeige1;
+            border-radius: 50%;
+        }
+    }
+
+    .btn--listen {
+        margin-left: 65px;
+    }
+
+    .btn--buy {
+        margin-left: 30px;
+    }
+}

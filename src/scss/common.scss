@@ -1,0 +1,146 @@
+body {
+    font-family: "Lora", serif;
+    color: $darkgray;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: $darkgray;
+}
+
+input, textarea, button {
+    background: none;
+    border: none;
+    resize: none;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button,
+a {
+    transition: 0.3s;
+
+    &:hover {
+        filter: brightness(0.9);
+    }
+
+    &:active {
+        filter: brightness(0.8);
+    }
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+.main-title {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+    text-transform: uppercase;
+
+    &--white {
+        color: $lightgray;
+    }
+
+    &--beige {
+        color: $beige;
+    }
+}
+
+.title {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.sub-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: capitalize;
+}
+
+.text {
+    font-size: 18px;
+    line-height: 36px;
+    text-align: justify;
+}
+
+.btn {
+    font-family: "Oswald", sans-serif;
+    width: 80px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $lightbeige1;
+    background: $beige;
+
+    &--listen {
+        color: $beige;
+        background: $lightbeige1;
+    }
+
+    &--buy-ticket {
+        width: auto;
+        padding: 7px 20px;
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    max-width: 720px;
+    margin: 0 auto;
+
+    &__icon {
+        width: 65px;
+        height: 65px;
+
+        &:hover,
+        &:active {
+            fill: $lightbeige;
+        }
+    }
+}
+
+.subscribe-form {
+    display: inline-block;
+    border: 6px solid $darkgray;
+
+    &__btn {
+        padding: 5px 35px;
+        font-family: "Oswald", sans-serif;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $lightbeige;
+        background: $darkgray;
+    }
+
+    &__input {
+        width: 290px;
+        font-size: 38px;
+    }
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    color: $beige;
+    transform: scale(1.8);
+}

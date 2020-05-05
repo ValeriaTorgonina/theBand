@@ -1,0 +1,56 @@
+.main-footer {
+    position: relative;
+    background: url("../../img/contact-bg.jpg") 50% 100% no-repeat;
+    background-size: cover;
+    padding-top: 170px;
+    padding-bottom: 500px;
+
+    .container {
+        text-align: center;
+    }
+
+    .main-title {
+        letter-spacing: 3px;
+        line-height: 120px;
+    }
+
+    .socials {
+        position: relative;
+        margin-top: 75px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            height: 3px;
+            width: 140%;
+            background-image: linear-gradient(to right, $lightbeige 13%, transparent 0%);
+            background-position: bottom;
+            background-size: 20px 3px;
+            background-repeat: repeat-x;
+        }
+    }
+
+    &__bottom-inner {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 70px 0;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__copyright {
+        display: block;
+        margin-top: 18px;
+        color: $lightbeige;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+}

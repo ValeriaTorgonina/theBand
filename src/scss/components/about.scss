@@ -1,0 +1,92 @@
+.about {
+    position: relative;
+    background: $lightbeige;
+
+    .container {
+        position: relative;
+    }
+
+    .swiper-slide {
+        position: relative;
+        display: flex;
+        padding-top: 440px;
+        box-sizing: border-box;
+    }
+
+    &__swiper {
+        overflow: hidden;
+    }
+
+    &__img img {
+        position: absolute;
+        bottom: 0px;
+        left: 10%;
+        height: 80%;
+        width: 35%;
+        opacity: 0.8;
+        filter: grayscale(1);
+    }
+
+    &__name {
+        width: 25%;
+        margin-top: 190px;
+        margin-left: 25%;
+        text-align: center;
+        box-sizing: border-box;
+        z-index: 2;
+    }
+    &__info {
+        width: 50%;
+        padding: 110px 150px;
+        box-sizing: border-box;
+    }
+
+    .main-title {
+        display: inline-block;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    &__list {
+        position: absolute;
+        top: 25%;
+        right: 24%;
+        transform: rotate(-90deg);
+    }
+
+    &__item {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-bottom: 23px;
+        border-radius: 50%;
+        background: $lightbeige1;
+        color: $lightbeige1;
+
+        &.active {
+            background: $beige;
+            color: $beige;
+        }
+    }
+
+    &__item-text {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 12px;
+
+        &:last-of-type {
+            right: auto;
+            left: 20px;
+        }
+    }
+
+
+}
+
