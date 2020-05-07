@@ -37,4 +37,64 @@
     .btn--buy {
         margin-left: 30px;
     }
+
+    @media (max-width: 1600px) {
+        width: 47%;
+
+        &__img img {
+            width: 605px;
+            height: 255px;
+            margin-left: -75px;
+            margin-bottom: 20px;
+        }
+
+        .btn--listen {
+            margin-left: 35px;
+        }
+    
+        .btn--buy {
+            margin-left: 15px;
+        }
+
+        .sub-title:last-of-type:before {
+            left: -30px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        width: 60%;
+        margin-bottom: 80px;
+
+        &__img img {
+            position: absolute;
+            top: 150px;
+            right: 70px;
+            width: 325px;
+            height: 125px;
+        }
+
+        &__item {
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (max-width: 770px) {
+        width: 100%;
+
+        &__img {
+            display: none;
+        }
+
+        .sub-title:before {
+            display: none;
+        }
+    }
+
+    @media (max-width: 500px) {
+        margin-bottom: 40px;
+
+        .btn--listen {
+            margin-left: 20px;
+        }
+    }
 }

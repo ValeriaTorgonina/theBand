@@ -10,9 +10,9 @@
         margin-bottom: 20px;
         padding-right: 75px;
         overflow-y: scroll;
+        box-sizing: border-box;
 
         &::-webkit-scrollbar-track{
-            -webkit-box-shadow: none;
             background: $lightbeige1;
         }
 
@@ -24,7 +24,6 @@
             background: $beige;
             opacity: 0.5;
         }
-
     }
 
     &__item {
@@ -89,5 +88,129 @@
 
     .btn--buy-ticket {
         margin-left: auto;
+    }
+
+    @media (max-width: 1600px) {
+        &__list {
+            width: 100%;
+            height: 250px;
+            padding-right: 35px;
+        }
+
+        &__item {
+            padding: 15px 25px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        padding: 50px 0;
+        
+        &__list {
+            height: 220px;
+            padding-right: 20px;
+        }
+
+        &__item-date {
+            width: 70px;
+            padding-right: 25px;
+        }
+
+        &__item-number {
+            font-size: 40px;
+        }
+    
+        &__item-month,
+        &__item-year {
+            font-size: 17px;
+        }
+    
+        &__item-month {
+            padding-top: 5px;
+        }
+    }
+
+    @media (max-width: 770px) {
+        &__list {
+            height: 150px;
+            padding-right: 20px;
+
+            &::-webkit-scrollbar{
+                width: 10px;
+            }
+        }
+
+        &__item {
+            padding: 10px;
+            border-bottom: 2px dotted $lightbeige1;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &__item-date {
+            width: 50px;
+            padding-right: 10px;
+
+            &:before {
+                width: 4px;
+                height: 20px;
+            }
+        }
+
+        &__item-number {
+            font-size: 25px;
+        }
+    
+        &__item-month,
+        &__item-year {
+            display: block;
+            font-size: 11px;
+        }
+    
+        &__item-month {
+            padding-top: 3px;
+        }
+
+        .sub-title {
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 500px) {
+
+        &__list {
+            height: 120px;
+            padding-right: 10px;
+        }
+
+        &__item {
+            padding: 10px 0;
+        }
+
+        &__item-date {
+            width: 20px;
+            padding-right: 10px;
+
+            &:before {
+                width: 4px;
+                height: 20px;
+            }
+        }
+
+        &__item-number {
+            font-size: 18px;
+            float: none;
+        }
+    
+        &__item-month,
+        &__item-year {
+            display: block;
+            font-size: 9px;
+        }
+
+        .btn {
+            flex-shrink: 0;
+        }
     }
 }

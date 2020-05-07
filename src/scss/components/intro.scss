@@ -14,4 +14,26 @@
         align-items: center;
         justify-content: center;
     }
+
+    @media (max-width: 1100px) {
+
+        &__content {
+            max-width: 200px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        background: $beige url("../../img/intro-bg.jpg") 35% 50% no-repeat;
+        background-size: cover;
+
+        &__content {
+            max-width: 200px;
+            margin-left: 20px;
+            width: auto;
+        }
+
+        .main-title:first-of-type {
+            margin-top: 40px;
+        }
+    }
 }

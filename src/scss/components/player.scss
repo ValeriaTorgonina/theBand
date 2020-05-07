@@ -32,12 +32,12 @@
         border-bottom: 11px solid transparent;
 
         &.active {
-            border-left: 18px solid $beige;
+            border-left-color: $beige;
         }
 
         &:hover,
         &:active {
-            border-left: 18px solid $beige;
+            border-left-color: $beige;
         }
     }
 
@@ -54,7 +54,7 @@
             content: '';
             position: absolute;
             left: -230px;
-            bottom: 7px;
+            bottom: 5px;
             height: 2px;
             width: 195px;
             background-image: linear-gradient(to right, $beige 18%, transparent 0%);
@@ -64,4 +64,101 @@
         }
     }
 
+    @media (max-width: 1600px) {
+        font-size: 15px;
+
+        .audio-player {
+            margin: 30px 0;
+        }
+
+        .sub-title {
+            margin-bottom: 10px;
+        }
+
+        &__playlist {
+            padding-right: 20px;
+            max-height: 250px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar-track{
+                background: $lightbeige;
+            }
+    
+            &::-webkit-scrollbar{
+                width: 15px;
+            }
+    
+            &::-webkit-scrollbar-thumb{
+                background: $lightbeige1;
+                opacity: 0.5;
+            }
+        }
+
+        &__playlist-item {
+            margin-bottom: 10px;
+        }
+
+        .player__track-time:before {
+            left: -124px;
+            width: 104px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        width: 100%;
+
+        &__playlist {
+            max-height: 190px;
+        }
+
+        .sub-title {
+            margin-bottom: 15px;
+        }
+
+        .player__track-time:before {
+            left: -20px;
+            bottom: 7px;
+            width: 320px;
+            transform: translate(-100%, 0);
+        }
+
+        &__play-btn {
+            border-top: 9px solid transparent;
+            border-left: 15px solid $lightbeige1;
+            border-bottom: 9px solid transparent;
+        }
+    }
+
+    @media (max-width: 770px) {
+        .player__track-time:before {
+            display: none;
+        }
+
+        &__playlist::-webkit-scrollbar{
+            width: 10px;
+        }
+
+        &__playlist-item {
+            border-bottom: 2px dotted $lightbeige1;
+        }
+
+        &__play-btn {
+            border-top: 7px solid transparent;
+            border-left: 12px solid $lightbeige1;
+            border-bottom: 7px solid transparent;
+        }
+    }
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+
+        &__playlist {
+            max-height: 148px;
+        }
+
+        &__playlist-item {
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+        }
+    }
 }

@@ -51,11 +51,37 @@ const aboutSwiper = new Swiper ('.about__swiper', {
 var dotsSwiper = new Swiper ('.dots-slider', {
   loop: false,
   speed: 500,
-  slidesPerView: 10,
-  spaceBetween: 10,
 
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+      initialSlide: 5,
+    },
+    500: {
+      slidesPerView: 5,
+      spaceBetween: 40,
+      initialSlide: 3,
+    },
+    770: {
+      slidesPerView: 7,
+      spaceBetween: 32,
+      initialSlide: 3,
+    },
+    1100: {
+      slidesPerView: 7,
+      spaceBetween: 10,
+      initialSlide: 1,
+    },
+    1600: {
+      slidesPerView: 10,
+      spaceBetween: 10,
+      initialSlide: 1,
+    }
   }
 })
