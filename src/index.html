@@ -30,7 +30,7 @@
                             <a href="#music" class="main-nav__link">music</a>
                         </li>
                         <li class="main-nav__item">
-                            <a href="#tours" class="main-nav__link">tours</a>
+                            <a href="#tour" class="main-nav__link">tours</a>
                         </li>
                         <li class="main-nav__item">
                             <a href="#contact" class="main-nav__link">contact</a>
@@ -41,11 +41,13 @@
         </header>
 
         <main class="main">
-            <section class="intro rellax" id="home" data-rellax-speed="-6">
-                <div class="container">
-                    <div class="intro__content rellax" data-rellax-speed="-1">
-                        <h1 class="main-title main-title--white">we are</h1>
-                        <h1 class="main-title">the band</h1>
+            <section class="intro" id="home">
+                <div class="intro__inner rellax" data-rellax-speed="-6">
+                    <div class="container">
+                        <div class="intro__content rellax" data-rellax-speed="-1">
+                            <h1 class="main-title main-title--white">we are</h1>
+                            <h1 class="main-title">the band</h1>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -56,8 +58,8 @@
                         <div class="swiper-wrapper">
                             <section class="swiper-slide">
                                 <picture class="about__img">
-                                    <source class="lazyload" type="image/webp" data-srcset="img/person.webp">
-                                    <img data-swiper-parallax="-200" class="lazyload" src="img/stub-img1.jpg" data-src="img/person.png" height="100%" width="100%" alt="lawrie alton">
+                                    <source class="lazyload" type="image/webp" data-srcset="assets/img/person.webp">
+                                    <img data-swiper-parallax="-200" class="lazyload" src="assets/img/stub-img1.jpg" data-src="assets/img/person.png" height="100%" width="100%" alt="lawrie alton">
                                 </picture>
                                 <div class="about__name" data-swiper-parallax="-500">
                                     <h1 class="main-title main-title--beige">lawrie</h1>
@@ -74,8 +76,8 @@
                             </section>
                             <section class="swiper-slide">
                                 <picture class="about__img">
-                                    <source class="lazyload" type="image/webp" data-srcset="img/person2.webp">
-                                    <img data-swiper-parallax="-200" class="lazyload" src="img/stub-img1.jpg" data-src="img/person2.png" height="100%" width="100%" alt="charles timmy">
+                                    <source class="lazyload" type="image/webp" data-srcset="assets/img/person2.webp">
+                                    <img data-swiper-parallax="-200" class="lazyload" src="assets/img/stub-img1.jpg" data-src="assets/img/person2.png" height="100%" width="100%" alt="charles timmy">
                                 </picture>
                                 <div class="about__name" data-swiper-parallax="-500">
                                     <h1 class="main-title main-title--beige">charles</h1>
@@ -92,8 +94,8 @@
                             </section>
                             <section class="swiper-slide">
                                 <picture class="about__img">
-                                    <source class="lazyload" type="image/webp" data-srcset="img/person3.webp">
-                                    <img data-swiper-parallax="-200" class="lazyload" src="img/stub-img1.jpg" data-src="img/person3.png" height="100%" width="100%" alt="curt sheard">
+                                    <source class="lazyload" type="image/webp" data-srcset="assets/img/person3.webp">
+                                    <img data-swiper-parallax="-200" class="lazyload" src="assets/img/stub-img1.jpg" data-src="assets/img/person3.png" height="100%" width="100%" alt="curt sheard">
                                 </picture>
                                 <div class="about__name" data-swiper-parallax="-500">
                                     <h1 class="main-title main-title--beige">curt</h1>
@@ -110,8 +112,8 @@
                             </section>
                             <section class="swiper-slide">
                                 <picture class="about__img">
-                                    <source class="lazyload" type="image/webp" data-srcset="img/person4.webp">
-                                    <img data-swiper-parallax="-200" class="lazyload" src="img/stub-img1.jpg" data-src="img/person4.png" height="100%" width="100%" alt="cade ryker">
+                                    <source class="lazyload" type="image/webp" data-srcset="assets/img/person4.webp">
+                                    <img data-swiper-parallax="-200" class="lazyload" src="assets/img/stub-img1.jpg" data-src="assets/img/person4.png" height="100%" width="100%" alt="cade ryker">
                                 </picture>
                                 <div class="about__name" data-swiper-parallax="-500">
                                     <h1 class="main-title main-title--beige">cade</h1>
@@ -128,8 +130,8 @@
                             </section>
                             <section class="swiper-slide">
                                 <picture class="about__img">
-                                    <source class="lazyload" type="image/webp" data-srcset="img/person5.webp">
-                                    <img data-swiper-parallax="-200" class="lazyload" src="img/stub-img1.jpg" data-src="img/person5.png" height="100%" width="100%" alt="tommie brendan">
+                                    <source class="lazyload" type="image/webp" data-srcset="assets/img/person5.webp">
+                                    <img data-swiper-parallax="-200" class="lazyload" src="assets/img/stub-img1.jpg" data-src="assets/img/person5.png" height="100%" width="100%" alt="tommie brendan">
                                 </picture>
                                 <div class="about__name" data-swiper-parallax="-500">
                                     <h1 class="main-title main-title--beige">tommie</h1>
@@ -149,7 +151,7 @@
                         <div class="swiper-button-next"></div>
                     </div>
                     <ul class="about__list">
-                        <li class="about__item">
+                        <li class="about__item active">
                             <span class="about__item-text">lawrie alton</span>
                             <span class="about__item-text">vocalist</span>
                         </li>
@@ -157,7 +159,7 @@
                             <span class="about__item-text">charles timmy</span>
                             <span class="about__item-text">guitar</span>
                         </li>
-                        <li class="about__item active">
+                        <li class="about__item">
                             <span class="about__item-text">curt sheard</span>
                             <span class="about__item-text">bass</span>
                         </li>
@@ -177,8 +179,8 @@
                 <div class="container">
                     <section class="discography">
                         <picture class="discography__img">
-                            <source class="lazyload" type="image/webp" data-srcset="img/album.webp">
-                            <img class="lazyload" src="img/stub-img2.jpg" data-src="img/album.png" height="100%" width="100%" alt="album">
+                            <source class="lazyload" type="image/webp" data-srcset="assets/img/album.webp">
+                            <img class="lazyload" src="assets/img/stub-img2.jpg" data-src="assets/img/album.png" height="100%" width="100%" alt="album">
                         </picture>
                         <h2 class="title">Discography</h2>
                         <ul class="discography__list">
@@ -212,7 +214,7 @@
                         <div class="player__titles">
                             <h2 class="title">Now playing</h2>
                             <h4 class="sub-title">surprise without flaws</h4>
-                            <span class="player__track">01. clouds in the forest</span>
+                            <span class="player__track">clouds in the forest</span>
                         </div>
                         <div class="audio-player">
                             <div class="audio-player__btn-inner">
@@ -367,7 +369,7 @@
 
         </main>
         
-        <footer class="main-footer">
+        <footer class="main-footer" id="contact">
             <div class="container">
                 <h1 class="main-title">contact</h1>
                 <a href="tel:+48 202-555-0114" class="main-title main-title--white">+48 202 - 555 - 0114</a>
@@ -381,14 +383,14 @@
                     <li class="socials__item">
                         <a href="#" class="socials__link">
                             <svg class="socials__icon">
-                                <use xlink:href="img/sprite.svg#facebook"></use>
+                                <use xlink:href="assets/img/sprite.svg#facebook"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="socials__item">
                         <a href="#" class="socials__link">
                             <svg class="socials__icon">
-                                <use xlink:href="img/sprite.svg#youtube"></use>
+                                <use xlink:href="assets/img/sprite.svg#youtube"></use>
                             </svg>
                         </a>
                     </li>
@@ -408,7 +410,7 @@
                                     <a href="#music" class="main-nav__link">music</a>
                                 </li>
                                 <li class="main-nav__item">
-                                    <a href="#tours" class="main-nav__link">tours</a>
+                                    <a href="#tour" class="main-nav__link">tours</a>
                                 </li>
                                 <li class="main-nav__item">
                                     <a href="#contact" class="main-nav__link active">contact</a>
@@ -420,8 +422,6 @@
                 </div>
             </div>
         </footer>
-
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
         
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
         

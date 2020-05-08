@@ -64,6 +64,7 @@
         border-radius: 50%;
         background: $lightbeige1;
         color: $lightbeige1;
+        transition: 0.3s;
 
         &.active {
             background: $beige;

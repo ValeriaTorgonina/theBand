@@ -34,13 +34,13 @@ gulp.task("style", [], () =>
 );
 
 gulp.task("images", () => 
-    gulp.src("src/img/**/*.{png,jpg,jpeg,svg}")
+    gulp.src("src/assets/img/**/*.{png,jpg,jpeg,svg}")
     .pipe(imagemin([
         imagemin.optipng({optimizationLevel: 3}),
         imagemin.jpegtran({progressive: true}),
         imagemin.svgo()
     ]))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest("build/assets/img"))
 );
 
 gulp.task("html", () => 
@@ -60,8 +60,7 @@ gulp.task("js",() => {
 
 gulp.task("copy", () => 
     gulp.src([
-        "src/fonts/**",
-        "src/img/**",
+        "src/assets/**",
         "src/js/**",
     ], {
         base: 'src'
@@ -70,7 +69,7 @@ gulp.task("copy", () =>
 )
 
 gulp.task('svgSprite', () => {
-    return gulp.src('src/img/icons/*.svg')
+    return gulp.src('src/assets/img/icons/*.svg')
         .pipe(svgSprite({
                 mode: {
                     stack: {
@@ -79,7 +78,7 @@ gulp.task('svgSprite', () => {
                 },
             }
         ))
-        .pipe(gulp.dest('src/img'));
+        .pipe(gulp.dest('src/assets/img'));
 });
 
 gulp.task("serve", ["style"], () => {
@@ -90,7 +89,7 @@ gulp.task("serve", ["style"], () => {
     gulp.watch("src/scss/**/*.scss", ['style']).on("change", server.reload);
     gulp.watch("src/*.html", ["html"]).on('change', server.reload);
     gulp.watch("src/js/**/*.*", ["copy"]).on('change', server.reload);
-    gulp.watch("src/img/**/*.*", ["copy"]).on('change', server.reload);
+    gulp.watch("src/assets/**/*.*", ["copy"]).on('change', server.reload);
 });
 
 gulp.task("build", done => {

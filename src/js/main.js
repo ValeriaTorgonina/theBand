@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
       this.prevBtn = document.querySelector('.audio-player__prev');
       this.tracks = this.getAllTracks();
       this.renderPlaylist();
-      this.audio = new Audio(`../img/audio/come-along.mp3`);
+      this.audio = new Audio(`../assets/audio/come-along.mp3`);
       this.activeTrack = this.getActiveTrack();
+      this.playlistItems = document.querySelectorAll(".player__playlist-item");
       this.playlistBtns = document.querySelectorAll(".player__play-btn");
       this.addHandlerForPlayButton();
       this.addHandlerForPlaylist();
       this.addHandlerForAudioRange();
       this.addHandlerForNextButton();
       this.addHandlerForPrevButton();
+      this.changeActivePlaylistItem(this.activeTrack.name);
     }
 
     buildListItemHTML(dataName, trackText, trackTime, i, isActive) {
@@ -98,13 +100,10 @@ document.addEventListener("DOMContentLoaded", function() {
           return item.name == this.activeTrack.name;
         })
         if(activeTrackIndex + 1 === this.tracks.length) {
-          this.changeActiveTrack(this.tracks[0].name);
+          this.changeActivePlaylistItem(this.tracks[0].name);
         }else{
-          this.changeActiveTrack(this.tracks[activeTrackIndex + 1].name);
+          this.changeActivePlaylistItem(this.tracks[activeTrackIndex + 1].name);
         }
-
-        this.reloadAudio();
-        this.changeTrack();
       }
     }
 
@@ -114,65 +113,22 @@ document.addEventListener("DOMContentLoaded", function() {
           return item.name == this.activeTrack.name;
         })
         if(activeTrackIndex === 0) {
-          this.changeActiveTrack(this.tracks[this.tracks.length - 1].name);
+          this.changeActivePlaylistItem(this.tracks[this.tracks.length - 1].name);
         }else{
-          this.changeActiveTrack(this.tracks[activeTrackIndex - 1].name);
-        }
-
-        this.reloadAudio();
-        this.changeTrack();
-      }
-    }
-
-    reloadAudio() {
-      this.playBtn.classList.remove('pause');
-      this.rangeDecor.style.width = '0%';
-      this.audio.load();
-    }
-
-    addHandlerForPlayButton() {
-      this.playBtn.onclick = () => {
-        const pauseBtn = document.querySelector(".pause");
-        if(!pauseBtn) {
-          this.audio.play();
-          this.range.setAttribute('max', this.audio.duration);
-          this.playBtn.classList.add('pause');
-        }else {
-          this.audio.pause();
-          this.playBtn.classList.remove('pause');
+          this.changeActivePlaylistItem(this.tracks[activeTrackIndex - 1].name);
         }
       }
-    };
-
-    changeActiveTrack(name) {
-      this.tracks = this.tracks.map(item => {
-        return {
-          ...item, 
-          active: item.name === name,
-        }
-      });
-      this.activeTrack = this.getActiveTrack();
-      this.reloadAudio();
-      this.changeTrack();
     }
 
     addHandlerForPlaylist() {
       this.playlist.onclick = e => {
         // change active button
         const trackItem = e.target.closest('.player__playlist-item');
-        this.playlistBtns.forEach(item => item.classList.remove('active'));
-        trackItem.querySelector('.player__play-btn').classList.add('active');
         // add track to player
         const name = trackItem.dataset.name;
-        this.changeActiveTrack(name)
+        this.changeActivePlaylistItem(name)
       }
     };
-
-    changeTrack() {
-      this.audio.pause();
-      this.trackTitle.textContent = this.activeTrack.text;
-      this.audio.setAttribute('src', `../img/audio/${this.activeTrack.name}.mp3`);
-    }
 
     addHandlerForAudioRange() {
       this.range.onchange = () => {
@@ -189,9 +145,55 @@ document.addEventListener("DOMContentLoaded", function() {
         this.range.value = this.audio.currentTime;
       });
     }
+
+    addHandlerForPlayButton() {
+      this.playBtn.onclick = () => {
+        const pauseBtn = document.querySelector(".pause");
+        if(!pauseBtn) {
+          this.audio.play();
+          this.range.setAttribute('max', this.audio.duration);
+          this.playBtn.classList.add('pause');
+        }else {
+          this.audio.pause();
+          this.playBtn.classList.remove('pause');
+        }
+      }
+    };
+
+    changeActivePlaylistItem(name) {
+      this.tracks = this.tracks.map(item => {
+        return {
+          ...item, 
+          active: item.name === name,
+        }
+      });
+      this.activeTrack = this.getActiveTrack();
+      this.changeActivePlaylistBtn();
+      this.reloadAudio();
+      this.changeTrack();
+    }
+
+    changeActivePlaylistBtn() {
+      this.playlistBtns.forEach(item => item.classList.remove('active'));
+      const activePlaylistItem = [...this.playlistItems].find(item => item.dataset.name === this.activeTrack.name);
+      activePlaylistItem.querySelector('.player__play-btn').classList.add('active');
+    }
+
+    changeTrack() {
+      this.audio.pause();
+      this.trackTitle.textContent = this.activeTrack.text;
+      this.audio.setAttribute('src', `../assets/audio/${this.activeTrack.name}.mp3`);
+    }
+
+    reloadAudio() {
+      this.playBtn.classList.remove('pause');
+      this.rangeDecor.style.width = '0%';
+      this.audio.load();
+    }
   }
 
   new Player();
+
 
   const rellax = new Rellax('.rellax');
 
@@ -205,6 +207,18 @@ document.addEventListener("DOMContentLoaded", function() {
       prevEl: '.swiper-button-prev',
     }
   })
+
+  let aboutListItems = document.querySelectorAll(".about__item");  
+  const aboutListItemsArr = [...aboutListItems];
+
+  aboutSwiper.on('slideChange', function() {
+    setTimeout(()=>{
+      aboutListItems.forEach(item => item.classList.remove("active"));
+      let activeSlide = document.querySelector(".swiper-slide-active"); 
+      const activeIndex = activeSlide.getAttribute('data-swiper-slide-index');
+      aboutListItemsArr[activeIndex].classList.add("active");
+    }, 100)
+  }) 
 
   const dotsSwiper = new Swiper ('.dots-slider', {
     loop: false,
