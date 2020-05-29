@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
       this.prevBtn = document.querySelector('.audio-player__prev');
       this.tracks = this.getAllTracks();
       this.renderPlaylist();
-      this.audio = new Audio(`../assets/audio/come-along.mp3`);
+      this.audio = new Audio(`assets/audio/come-along.mp3`);
       this.activeTrack = this.getActiveTrack();
       this.playlistItems = document.querySelectorAll(".player__playlist-item");
       this.playlistBtns = document.querySelectorAll(".player__play-btn");
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
     changeTrack() {
       this.audio.pause();
       this.trackTitle.textContent = this.activeTrack.text;
-      this.audio.setAttribute('src', `../assets/audio/${this.activeTrack.name}.mp3`);
+      this.audio.setAttribute('src', `assets/audio/${this.activeTrack.name}.mp3`);
     }
 
     reloadAudio() {
